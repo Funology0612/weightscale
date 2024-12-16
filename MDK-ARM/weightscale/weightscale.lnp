@@ -1,0 +1,24 @@
+--cpu Cortex-M3
+"weightscale\startup_stm32f103xb.o"
+"weightscale\main.o"
+"weightscale\stm32f1xx_it.o"
+"weightscale\stm32f1xx_hal_msp.o"
+"weightscale\stm32f1xx_hal_gpio_ex.o"
+"weightscale\stm32f1xx_hal_i2c.o"
+"weightscale\stm32f1xx_hal.o"
+"weightscale\stm32f1xx_hal_rcc.o"
+"weightscale\stm32f1xx_hal_rcc_ex.o"
+"weightscale\stm32f1xx_hal_gpio.o"
+"weightscale\stm32f1xx_hal_dma.o"
+"weightscale\stm32f1xx_hal_cortex.o"
+"weightscale\stm32f1xx_hal_pwr.o"
+"weightscale\stm32f1xx_hal_flash.o"
+"weightscale\stm32f1xx_hal_flash_ex.o"
+"weightscale\stm32f1xx_hal_exti.o"
+"weightscale\stm32f1xx_hal_tim.o"
+"weightscale\stm32f1xx_hal_tim_ex.o"
+"weightscale\system_stm32f1xx.o"
+--strict --scatter "weightscale\weightscale.sct"
+--summary_stderr --info summarysizes --map --load_addr_map_info --xref --callgraph --symbols
+--info sizes --info totals --info unused --info veneers
+--list "weightscale.map" -o weightscale\weightscale.axf
