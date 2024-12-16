@@ -22,8 +22,8 @@
 /* Private includes ----------------------------------------------------------*/
 /* USER CODE BEGIN Includes */
 #include "stm32f1xx_hal.h"
-#include "CLCD_I2C.h"
-#include "hx711.h"
+//#include "CLCD_I2C.h"
+
 /* USER CODE END Includes */
 
 /* Private typedef -----------------------------------------------------------*/
@@ -53,7 +53,7 @@ long tare_offset = 0;
 I2C_HandleTypeDef hi2c1;
 
 TIM_HandleTypeDef htim1;
-
+CLCD_I2C_Name LCD1;
 /* USER CODE BEGIN PV */
 // Hàm kh?i t?o HX711
 void HX711_Init(void) {
@@ -71,7 +71,7 @@ void Calibrate(void) {
     tare_offset = hx711_value_ave(&hx711, 10); // Trung bình 10 l?n d?c
 }
 
-// Hàm d?c tr?ng lu?ng
+// Hàm doc trong luong
 float Get_Weight(void) {
     long raw_value = hx711_value_ave(&hx711, 10); // Trung bình 10 l?n d?c
     return (raw_value - tare_offset) / 100.0f;    // Chia t? l? theo t?i tr?ng
@@ -80,10 +80,12 @@ float Get_Weight(void) {
 /* USER CODE END PV */
 
 /* Private function prototypes -----------------------------------------------*/
+
 void SystemClock_Config(void);
 static void MX_GPIO_Init(void);
 static void MX_I2C1_Init(void);
 static void MX_TIM1_Init(void);
+
 /* USER CODE BEGIN PFP */
 
 /* USER CODE END PFP */
@@ -126,7 +128,8 @@ int main(void)
 
     // Hi?n th? thông tin ban d?u
     CLCD_I2C_Clear(LCD_1LINE);
-    I2C_LCD_setCursor(0, 0);
+		CLCD_I2C_Init(&LCD1,&hi2c1,0x4e,20,4);
+    CLCD_I2C_SetCursor(LCD_1LINE,0, 0);
     CLCD_I2C_WriteString(LCD_1LINE, "Weight:");
   /* USER CODE END SysInit */
 
@@ -144,7 +147,7 @@ int main(void)
   {
 		 // Ð?c và hi?n th? tr?ng lu?ng
         weight = Get_Weight();
-        I2C_LCD_setCursor(0, 1);
+        CLCD_I2C_SetCursor(LCD_1LINE,0, 1);
         char buffer[16];
         printf(buffer, sizeof(buffer), "%.2f kg", weight);
         CLCD_I2C_WriteString(LCD_1LINE, buffer);
