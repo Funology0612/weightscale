@@ -92,7 +92,7 @@ static void MX_TIM1_Init(void);
 
 /* Private user code ---------------------------------------------------------*/
 /* USER CODE BEGIN 0 */
-
+CLCD_I2C_Name LCD1;
 /* USER CODE END 0 */
 
 /**
@@ -127,10 +127,11 @@ int main(void)
     Calibrate();
 
     // Hi?n th? thông tin ban d?u
-    CLCD_I2C_Clear(LCD_1LINE);
-		CLCD_I2C_Init(&LCD1,&hi2c1,0x4e,20,4);
-    CLCD_I2C_SetCursor(LCD_1LINE,0, 0);
-    CLCD_I2C_WriteString(LCD_1LINE, "Weight:");
+    
+		CLCD_I2C_Init(&LCD1,&hi2c1,0x4e,16,2);
+		CLCD_I2C_Clear(&LCD1);
+    CLCD_I2C_SetCursor(&LCD1,0, 0);
+    CLCD_I2C_WriteString(&LCD1, "Weight:");
   /* USER CODE END SysInit */
 
   /* Initialize all configured peripherals */
@@ -147,10 +148,10 @@ int main(void)
   {
 		 // Ð?c và hi?n th? tr?ng lu?ng
         weight = Get_Weight();
-        CLCD_I2C_SetCursor(LCD_1LINE,0, 1);
-        char buffer[16];
-        printf(buffer, sizeof(buffer), "%.2f kg", weight);
-        CLCD_I2C_WriteString(LCD_1LINE, buffer);
+        CLCD_I2C_SetCursor(&LCD1,0, 1);
+        char buffer[]="abcd";
+        //printf(buffer, sizeof(buffer), "%.2f kg", weight);
+        CLCD_I2C_WriteString(&LCD1, buffer);
 
         HAL_Delay(500); // C?p nh?t m?i 500ms
     }
