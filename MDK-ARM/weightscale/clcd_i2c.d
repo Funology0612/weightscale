@@ -1,5 +1,5 @@
-weightscale/stm32f1xx_hal_rcc.o: \
-  ..\Drivers\STM32F1xx_HAL_Driver\Src\stm32f1xx_hal_rcc.c \
+weightscale/clcd_i2c.o: ..\Drivers\STM32F1xx_HAL_Driver\Src\CLCD_I2C.c \
+  ..\Drivers\STM32F1xx_HAL_Driver\Inc\CLCD_I2C.h \
   ..\Drivers\STM32F1xx_HAL_Driver\Inc\stm32f1xx_hal.h \
   ..\Core\Inc\stm32f1xx_hal_conf.h \
   ..\Drivers\STM32F1xx_HAL_Driver\Inc\stm32f1xx_hal_rcc.h \

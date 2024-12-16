@@ -498,6 +498,21 @@
           </Files>
         </Group>
         <Group>
+          <GroupName>ThuVien</GroupName>
+          <Files>
+            <File>
+              <FileName>CLCD_I2C.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\Drivers\STM32F1xx_HAL_Driver\Src\CLCD_I2C.c</FilePath>
+            </File>
+            <File>
+              <FileName>hx711.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\Drivers\STM32F1xx_HAL_Driver\Src\hx711.c</FilePath>
+            </File>
+          </Files>
+        </Group>
+        <Group>
           <GroupName>::CMSIS</GroupName>
         </Group>
       </Groups>
@@ -516,5 +531,14 @@
     </components>
     <files/>
   </RTE>
+
+  <LayerInfo>
+    <Layers>
+      <Layer>
+        <LayName>weightscale</LayName>
+        <LayPrjMark>1</LayPrjMark>
+      </Layer>
+    </Layers>
+  </LayerInfo>
 
 </Project>

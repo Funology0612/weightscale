@@ -7,9 +7,9 @@ weightscale/main.o: ..\Core\Src\main.c ..\Core\Inc\main.h \
   ..\Drivers\CMSIS\Device\ST\STM32F1xx\Include\stm32f103xb.h \
   ..\Drivers\CMSIS\Include\core_cm3.h \
   C:\Keil_v5\ARM\ARMCLANG\include\stdint.h \
-  D:\CubeMX\STM32\weightscale\Drivers\CMSIS\Include\cmsis_version.h \
-  D:\CubeMX\STM32\weightscale\Drivers\CMSIS\Include\cmsis_compiler.h \
-  D:\CubeMX\STM32\weightscale\Drivers\CMSIS\Include\cmsis_armclang.h \
+  D:\2.Project_2024\11.LoadCell_Hx711\Firmware\weightscale\Drivers\CMSIS\Include\cmsis_version.h \
+  D:\2.Project_2024\11.LoadCell_Hx711\Firmware\weightscale\Drivers\CMSIS\Include\cmsis_compiler.h \
+  D:\2.Project_2024\11.LoadCell_Hx711\Firmware\weightscale\Drivers\CMSIS\Include\cmsis_armclang.h \
   C:\Keil_v5\ARM\ARMCLANG\include\arm_compat.h \
   C:\Keil_v5\ARM\ARMCLANG\include\arm_acle.h \
   ..\Drivers\CMSIS\Device\ST\STM32F1xx\Include\system_stm32f1xx.h \
@@ -28,6 +28,6 @@ weightscale/main.o: ..\Core\Src\main.c ..\Core\Inc\main.h \
   ..\Drivers\STM32F1xx_HAL_Driver\Inc\stm32f1xx_hal_pwr.h \
   ..\Drivers\STM32F1xx_HAL_Driver\Inc\stm32f1xx_hal_tim.h \
   ..\Drivers\STM32F1xx_HAL_Driver\Inc\stm32f1xx_hal_tim_ex.h \
-  C:\Keil_v5\ARM\ARMCLANG\include\stdio.h \
+  ..\Drivers\STM32F1xx_HAL_Driver\Inc\hx711.h \
   ..\Drivers\STM32F1xx_HAL_Driver\Inc\CLCD_I2C.h \
-  ..\Drivers\STM32F1xx_HAL_Driver\Inc\hx711.h
+  C:\Keil_v5\ARM\ARMCLANG\include\stdio.h
